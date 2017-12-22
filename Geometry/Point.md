@@ -53,6 +53,8 @@ struct Point {
 
 ### DEG_to_RAD
 
+Conversión de grados a radianes.
+
 ```cpp
 
 double DEG_to_RAD(double deg) {
@@ -65,18 +67,46 @@ double DEG_to_RAD(double deg) {
 
 **Retorno:** Un valor flotante que representa el valor del parámetro en radianes.
 
-Usa la fórmula tradicional para convertir de grados a radianes.
+Usa la fórmula tradicional para convertir de grados a radianes:
 ![alt text](http://www.radianstodegrees.net/img/degrees-to-radians2.png)
 
+
+### dist
+
+Obtiene la distancia entre dos puntos
+
+```cpp
 
 double dist(Point p1, Point p2) {
 	return sqrt(pow(p1.x-p2.x, 2) + pow(p1.y-p2.y, 2) + pow(p1.z-p2.z, 2)); }
 	
+```
+
+**Entrada:** Dos puntos _p1_ y _p2_.
+
+**Retorno:** Valor flotante que representa la distancia entre los puntos dados como parámetro.
+
+Usa la fórmula tradicional para obtener la distancia entre dos puntos:
+
+![alt text](http://www.onlinemath4all.com/images/dbtpformula.png)
+
+### rotate
+
+```cpp
+
 Point rotate(Point p, double theta) {
 	double rad = DEG_to_RAD(theta);
 	return Point(p.x*cos(rad) - p.y*sin(rad),
 				 p.x*sin(rad) + p.y*cos(rad));
 }
+
+```
+
+**Entrada:** Un point _p_ y un valor flotante _theta_ que representa el ángulo de rotación en grados.
+
+**Retorno:** Un punto con la rotación del ángulo _theta_ dado.
+
+Usa la función _DEG_to_RAD_ para convertir el ángulo de rotación a radianes. Posteriormente  
 
 double ANG(double rad) { return rad*180/PI; }
 double angulo(Point p) {
