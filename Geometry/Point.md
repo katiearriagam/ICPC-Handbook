@@ -70,7 +70,6 @@ double DEG_to_RAD(double deg) {
 Usa la fórmula tradicional para convertir de grados a radianes:
 ![alt text](http://www.radianstodegrees.net/img/degrees-to-radians2.png)
 
-
 ### dist
 
 Obtiene la distancia entre dos puntos
@@ -110,7 +109,23 @@ Construye un objeto Point nuevo, pasando en el constructor los puntos ajustados 
 
 ![alt text](https://wikimedia.org/api/rest_v1/media/math/render/svg/4e8193cc301ba228063af7ecdf292c2b8c7e76d3)
 
+### ANG
+
+```cpp
+
 double ANG(double rad) { return rad*180/PI; }
+
+```
+**Entrada:** Un valor flotante que representa el ángulo en radianes.
+
+**Retorno:** Un valor flotante que representa el ángulo en grados.
+
+Usa el despeje de la fórmula de la ecuación _DEG_to_RAD_ para convertir los radianes dados a grados.
+
+### angulo 
+
+```cpp
+
 double angulo(Point p) {
 	double d = atan(double(p.y)/p.x);
 	if(p.x < 0)
@@ -119,3 +134,10 @@ double angulo(Point p) {
 		d += 2*PI;
 	return ANG(d);
 }
+
+```
+**Entrada:** Un punto _p_.
+
+**Retorno:** Un valor flotante que representa el ángulo de rotación de _p_ expresado en grados.
+
+Obtiene el ángulo de rotación del punto en radianes y hace el ajuste correspondiente dependiento de los valores de _x_ y _y_ de _p_. Usa la función _ANG_ para convertir los radianes obtenidos a grados.
