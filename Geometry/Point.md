@@ -102,11 +102,13 @@ Point rotate(Point p, double theta) {
 
 ```
 
-**Entrada:** Un point _p_ y un valor flotante _theta_ que representa el ángulo de rotación en grados.
+**Entrada:** Un Point _p_ relativo al origen del plano y un valor flotante _theta_ que representa el ángulo de rotación en grados.
 
 **Retorno:** Un punto con la rotación del ángulo _theta_ dado.
 
-Usa la función _DEG_to_RAD_ para convertir el ángulo de rotación a radianes. Posteriormente  
+Construye un objeto Point nuevo, pasando en el constructor los puntos ajustados al ángulo dado, usando la ecuación tradicional de rotación de puntos:
+
+![alt text](https://wikimedia.org/api/rest_v1/media/math/render/svg/4e8193cc301ba228063af7ecdf292c2b8c7e76d3)
 
 double ANG(double rad) { return rad*180/PI; }
 double angulo(Point p) {
